@@ -688,4 +688,9 @@ class CardBlockServiceApplicationTests {
 		JSONObject outputJson = (JSONObject) new JSONParser().parse(outputMessage.getPayload());
 		assertEquals("error", outputJson.get("status"));
 	}
+
+	@Test
+	void testMainMethodDoesNotThrow() {
+		assertDoesNotThrow(() -> CardBlockServiceApplication.main(new String[]{}));
+	}
 }
